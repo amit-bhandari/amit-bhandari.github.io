@@ -1090,19 +1090,20 @@ header {
 	z-index: 600;
 }
 header .row {
-	position: relative;
+	position: fixed;
 	min-height: 66px;
 }
 header .top-bar {
 	display: block;
 	background: #000000;
 	min-width: 220px;
+	width: 100vw;
 	min-height: 66px;
 	position: absolute;
-	left: 90px;
 	top: 0;
 }
 header .logo {
+	color: white;
 	float: left;
 	margin-left: 20px;
 	margin-right: 50px;
@@ -1119,7 +1120,7 @@ header .logo a {
 	color: transparent;
 	width: 92px;
 	height: 15px;
-	background: url("../images/logo.png") no-repeat center;
+	/*background: url("../images/logo.png") no-repeat center;*/
 	background-size: 92px 15px;
 }
 
@@ -1265,26 +1266,7 @@ header .logo a {
  * header styles
  * --------------------------------------------------------------- 
  */
-@media only screen and (max-width:1024px) {
-	header .top-bar {
-		left: 60px;
-	}
-}
-@media only screen and (max-width:768px) {
-	header .top-bar {
-		left: 50px;
-	}
-}
-@media only screen and (max-width:600px) {
-	header .top-bar {
-		left: 35px;
-	}
-}
-@media only screen and (max-width:400px) {
-	header .top-bar {
-		left: 25px;
-	}
-}
+
 
 
 /** 
