@@ -55,17 +55,17 @@ Now create your first project on Team City by clicking on Administration on top 
 There are several options provided to create project i.e. from Github, Bitbucket, Repository URL or manual setup. 
 You could setup Github connection in your TC by providing credentials and TC will list all your repositories to choose from.
 
-![regular](ci/1_ci.webp)
+![regular](ci/1_ci.webp#center)
 
 Select repository you want to setup CI for and click on Proceed.
 
-![regular](ci/2_ci.webp)
+![regular](ci/2_ci.webp#center)
 
 
 TC will try to auto read build steps for project by going through project files and find the correct one most of the times, 
 if not, you can always provide the build steps manually
 
-![regular](ci/3_ci.webp)
+![regular](ci/3_ci.webp#center)
 
 
 Select **Gradle** and click on use selected. (later we will modify build steps to include auto upload of signed apk to play console)
@@ -81,11 +81,11 @@ I set up my VCS trigger on ‘beta’ branch so that whenever I push any changes
 To edit default branch of your project (change VCS trigger to beta branch in my case), 
 go to **Project Settings -> VCS Roots -> Edit (on particular VCS root) -> Default branch** and update its value.
 
-![regular](ci/4_ci.webp)
+![regular](ci/4_ci.webp#center)
 
 Android Continuous Integration Setup on Team City
 
-![regular](ci/5_ci.webp)
+![regular](ci/5_ci.webp#center)
 
 And your TC is setup to check beta branch every 1 minute and checkout changes (if any) and build the project. 
 You can setup notification system to notify you in case of failure (or success as well) via email. 
@@ -153,17 +153,17 @@ To get started using play console API, we need p12 key file and instructions to 
 Main steps are
 
 1. Going to API access page in developer console and linking your project by clicking on link.
-![regular](ci/6_ci.webp)
+![regular](ci/6_ci.webp#center)
 2. We need to set up API access client by creating service account. 
 You will see option to create service account on the same page below under ‘Service Accounts’ section.
-![regular](ci/7_ci.webp)
+![regular](ci/7_ci.webp#center)
 3. Click on ‘grant access’ and give required permissions.
-![regular](ci/8_ci.webp)
+![regular](ci/8_ci.webp#center)
 
 Once your service account is set up, go to [Google API Console](https://console.developers.google.com/), open up credentials from left navigation, click on **create credentials -> Service account key -> Choose your service account -> Choose P12 and click create.** 
 This will download P12 key file in your browser. **Do not share this file with anyone.**
 
-![regular](ci/9_ci.webp)
+![regular](ci/9_ci.webp#center)
 
 Once you successfully got key file, place it somewhere in your server securely (make sure you don’t include the file in VCS) and mention that path in keystore.properties file. 
 Now mention your service account email and apk upload track (alpha, beta or prod) in build.gradle like this. 
@@ -180,7 +180,7 @@ play {
 And sync your project with gradle. To make sure signing info is correctly set up and your build is ready to upload apk to console upon successful build, go to terminal and change working directory to your root android project and give command *‘./gradlew tasks’* and you should be able to see all the available play store tasks 
 (you will not see ‘publishApkRelease’ if there is problem in your signing info in build.gradle)
 
-![regular](ci/10_ci.webp)
+![regular](ci/10_ci.webp#center)
 
 You can test your apk upload task by running ‘./gradlew publishApkRelease’ in terminal right away. 
 It should invoke build and upload release.apk along with the de-obfuscation to your play console.
@@ -191,7 +191,7 @@ I have set beta branch of my code to invoke build and publishApkRelease on Andro
 You could set up your system as per your requirement and liking. 
 All you have to do is mention ‘publishApkRelease’ task in your build steps in TC Project Settings like below.
 
-![regular](ci/11_ci.webp)
+![regular](ci/11_ci.webp#center)
 
 Now you can test your Android Continuous Integration setup by pushing test changes on branch (‘beta’ in my case). 
 **I hope you don’t face any error which google won’t be able to help with.**
