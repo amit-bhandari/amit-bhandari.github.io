@@ -24,8 +24,8 @@ outputs:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  description: "Android stuff"
-  author: Theme PaperMod
+  description: "I am an 8-year experienced software engineer, an open-source and linux enthusiast. I like to call myself a writer (although I mostly write codes and stuff)."
+  author: Amit Bhandari
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   ShowReadingTime: true
