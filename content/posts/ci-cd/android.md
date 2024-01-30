@@ -55,7 +55,6 @@ Now create your first project on Team City by clicking on Administration on top 
 There are several options provided to create project i.e. from Github, Bitbucket, Repository URL or manual setup. 
 You could setup Github connection in your TC by providing credentials and TC will list all your repositories to choose from.
 
-
 ![regular](ci/1_ci.webp)
 
 Select repository you want to setup CI for and click on Proceed.
