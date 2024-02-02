@@ -28,7 +28,7 @@ params:
   author: Amit Bhandari
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
-  ShowReadingTime: true
+  ShowReadingTime: false
   ShowCodeCopyButtons: true
   ShowRssButtonInSectionTermList: true
   ShowAllPagesInArchive: true
