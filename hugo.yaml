@@ -71,9 +71,9 @@ params:
     - name: linkedin
       title: Find me on Linkedin
       url: "https://www.linkedin.com/in/amit-bhandari-2bb32a92/"
-    - name: leetcode
-      title: Find me on Leetcode
-      url: "https://leetcode.com/amitbhandaric/"
+    # - name: leetcode
+    #   title: Find me on Leetcode
+    #   url: "https://leetcode.com/amitbhandaric/"
 
   # editPost:
   #   URL: "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
