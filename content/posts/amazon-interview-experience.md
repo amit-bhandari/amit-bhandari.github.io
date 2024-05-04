@@ -41,7 +41,7 @@ Resources which I used for my DSA preparation
 * [75 Interview Questions](https://leetcode.com/studyplan/leetcode-75/) 
 * [Codehelp](https://www.youtube.com/watch?v=WQoB2z67hvY&list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA) (Specially for DP, Recursion problem solving)
 
-Interviewer was convinced with my DSA and coding skills and moved on to **[behavioural questions](http://localhost:1313/posts/amazon-interview-experience/#behavioural-questions)** section of interview. 
+Interviewer was convinced with my DSA and coding skills and moved on to **[behavioural questions](#behavioural-questions)** section of interview. 
 
 
 ## Round 2 - Logical and Maintainable code writing
@@ -56,7 +56,7 @@ Good knowledge about SOLID principles really comes handy for this round.
 
 Kind of problem which you will get in this round highly depends on your interviewer and team for which you are being interviewed for. If you are a experienced engineer, you do not even need to prepare for this round, you already know this stuff (hopefully!)
 
-Interviewer was convinced with my approach to the problem and code and moved on to **[behavioural questions](http://localhost:1313/posts/amazon-interview-experience/#behavioural-questions)** section of interview. 
+Interviewer was convinced with my approach to the problem and code and moved on to **[behavioural questions](#behavioural-questions)** section of interview. 
 
 
 ## Round 3 - Mobile System Design round
@@ -75,7 +75,7 @@ If you are interviewing for backend role, here are couple of resources which I f
 * [System Design Interview – An insider's guide](https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF)
 
 
-Interviewer was convinced with mobile system design capabilities and moved on to **[behavioural questions](http://localhost:1313/posts/amazon-interview-experience/#behavioural-questions)** section of interview. 
+Interviewer was convinced with mobile system design capabilities and moved on to **[behavioural questions](#behavioural-questions)** section of interview. 
 
 
 ## Round 4 - Bar Raiser 
@@ -87,7 +87,7 @@ You will probably never know which one of your round was conducted by bar raiser
 In this round, I was given a backend system design problem. Even though backend is not my expertise, I clarified interviewer that whatever knowledge I have in backend system design is purely theoretical. 
 Interviewer insisted that I provide solution to the best of my capability. Fortunately I had decent exposure in backend technolgoies being worked on NodeJS and Java based backends and I had read through couple of backend system design books as well. 
 
-I was able to draw and model data flow for given problem and also answered and made changes to my design after few follow up questions and constraint changes. Interviewer was convinced of my system design skills and moved on to **[behavioural questions](http://localhost:1313/posts/amazon-interview-experience/#behavioural-questions)** section of interview. 
+I was able to draw and model data flow for given problem and also answered and made changes to my design after few follow up questions and constraint changes. Interviewer was convinced of my system design skills and moved on to **[behavioural questions](#behavioural-questions)** section of interview. 
 
 Clearing bar raiser round improves your chances of getting strong hire rating and good offer! 
 
