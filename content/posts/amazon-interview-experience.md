@@ -2,6 +2,7 @@
 title = 'Amazon Interview Experience - Android Engineer SDE-II'
 date = 2024-05-04T21:56:17+05:30
 draft = false
+description = "I recently joined Amazon and would like to share my interview experience for anyone who is intending to prepare for an android engineering role at Amazon."
 +++
 
 I recently joined Amazon and would like to share my interview experience for anyone who is intending to prepare for an engineering role at Amazon.
