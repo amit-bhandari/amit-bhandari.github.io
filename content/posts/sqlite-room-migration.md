@@ -11,3 +11,5 @@ externalLink = 'https://amit-bhandari.medium.com/migrating-existing-sqlite-imple
 Room is a persistence library introduce by Google in this year I/0. 
 Room makes it extremely easy to work with SQLite in your android application and worth giving a shot if you are using SQLiteOpenHelper as of now for handling data in your app. 
 Migrating your current implementation to Room is, surprisingly, very easy.
+
+**Originally written on medium [here](https://amit-bhandari.medium.com/migrating-existing-sqlite-implementation-to-room-d05bb8dada7e)**
