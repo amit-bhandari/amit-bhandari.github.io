@@ -21,7 +21,7 @@ I gave a couple of interviews without any preparation right away and failed to c
 
 I got the interview via a referral, which is the fastest way to secure an interview. Instead of relying on a direct application, you should always seek referrals. There are two types of referrals at Amazon: one where an Amazon employee knows and can vouch for the candidate, and another where an Amazonian refers someone from their network without personally knowing the candidate.
 
-It's always better to get the first kind of referral, and for that purpose, you need to find someone at Amazon who can truly vouch for you. I would be more than happy to provide a referral for you; reach out to me via email with your resume for the same. I have opened up some slots for mock interviews over the weekend; you can book one **[here](https://topmate.io/amit_bhandari_c/)** (it’s free of cost and subject to my availability)."
+It's always better to get the first kind of referral, and for that purpose, you need to find someone at Amazon who can truly vouch for you. I would be more than happy to provide a referral for you; reach out to me via email with your resume for the same. I have opened up some slots for mock interviews over the weekend; you can book one **{{< newtabref href=https://topmate.io/amit_bhandari_c/ title="here" >}}** (it’s free of cost and subject to my availability).
 
 ## Round 1 - DSA 
 There's a prevalent belief circulating online that extensive preparation in Data Structures and Algorithms (DSA) is essential to crack FAANG interviews, and many influencers are capitalizing on this by selling various courses. I often see young engineers on different forums expressing frustration, stating that even after solving thousands of LeetCode questions, they struggle to land offers from FAANG or other companies.
@@ -45,16 +45,16 @@ Having practiced many graph-related questions on LeetCode beforehand, I was able
 
 Following questions for leetcode are the closest one which I could find
 
-* [Problem 1](https://leetcode.com/problems/keys-and-rooms/description/) 
-* [Problem 2](https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/description/)
+* {{< newtabref href=https://leetcode.com/problems/keys-and-rooms/description/ title="Problem 1" >}}
+* {{< newtabref href=https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/description/ title="Problem 2" >}}
 
 
 Resources which I used for my DSA preparation 
 
-* [neetcode.io](https://neetcode.io/roadmap) 
-* [150 Interview Questions](https://leetcode.com/studyplan/top-interview-150/) 
-* [75 Interview Questions](https://leetcode.com/studyplan/leetcode-75/) 
-* [Codehelp](https://www.youtube.com/watch?v=WQoB2z67hvY&list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA) (Specially for DP, Recursion problem solving)
+* {{< newtabref href=https://neetcode.io/roadmap title="neetcode.io" >}}
+* {{< newtabref href=https://leetcode.com/studyplan/top-interview-150/ title="150 Interview Questions" >}}
+* {{< newtabref href=https://leetcode.com/studyplan/leetcode-75/ title="75 Interview Questions" >}}
+* {{< newtabref href=https://www.youtube.com/watch?v=WQoB2z67hvY&list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA title="Codehelp" >}}
 
 Interviewer was convinced with my DSA and coding skills and moved on to **[behavioural questions](#behavioural-questions)** section of interview. 
 
@@ -81,13 +81,13 @@ This round is specifically for mobile engineer roles (Android or iOS or Hybrid).
 Question asked to me in this round was specific to the role for which I was being interviewed for (I realized it after I joined Amazon). Generally kind of question which would be asked in this interview highly depends on team/role for which you are being interviewed for. 
 There are only handful of resources available for mobile system design preparation online, listing some of them below.
 
-* [Mobile System Design](https://github.com/weeeBox/mobile-system-design)
-* [Mobile System Design Mocks](https://www.youtube.com/@alementuev)
+* {{< newtabref href=https://github.com/weeeBox/mobile-system-design title="Mobile System Design" >}} 
+* {{< newtabref href=https://www.youtube.com/@alementuev title="Mobile System Design Mocks" >}} 
 
 
 If you are interviewing for backend role, here are couple of resources which I found great
-* [System Design Resources](https://github.com/ashishps1/awesome-system-design-resources)
-* [System Design Interview – An insider's guide](https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF)
+* {{< newtabref href=https://github.com/ashishps1/awesome-system-design-resources title="System Design Resources" >}} 
+* {{< newtabref href=https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF title="System Design Interview – An insider's guide" >}} 
 
 
 Interviewer was convinced with mobile system design capabilities and moved on to **[behavioural questions](#behavioural-questions)** section of interview. 
@@ -109,20 +109,19 @@ Clearing bar raiser round improves your chances of getting strong hire rating an
 ## Behavioural Questions 
 
 Last 30 minutes of each of above 4 rounds had common section reserved for behavioural situation based questions. 
-In this round, interviewer is interested in knowing how well you have applied **[leadership principles](https://www.amazon.jobs/content/en-gb/our-workplace/leadership-principles)** of Amazon in your work experience. 
+In this round, interviewer is interested in knowing how well you have applied **{{< newtabref href=https://www.amazon.jobs/content/en-gb/our-workplace/leadership-principles title="leadership principles" >}}** of Amazon in your work experience. 
 
-If you intend to clear amazon interviews, you must prepare very well for these questions and ensure that your answer captures some of the amazon's leadership principles. You should use **[STAR](https://www.amazon.jobs/en-gb/software-development-interview-prep?INTCMPID=OAAJAZ100026B#/lessons/voFh_g5SwbFdRbRu8VSWWtvh-f1g54PJ)** method to answer these questions.
+If you intend to clear amazon interviews, you must prepare very well for these questions and ensure that your answer captures some of the amazon's leadership principles. You should use **{{< newtabref href=https://www.amazon.jobs/en-gb/software-development-interview-prep?INTCMPID=OAAJAZ100026B#/lessons/voFh_g5SwbFdRbRu8VSWWtvh-f1g54PJ title="STAR" >}}** method to answer these questions.
 
 I was asked wide range of questions by each interviewer like `Tell me about a time when you had ...`, `Tell me about your most proud moment`, `How did you handle situation like...` etc
 
-I found very good **[resource](https://managementconsulted.com/amazon-leadership-principles/)** which you can use to prepare for these questions. 
-
+I found very good **{{< newtabref href=https://managementconsulted.com/amazon-leadership-principles/ title="resource" >}}** which you can use to prepare for these questions.
 
 ## Extra Resources
-* Amazon has documented their interview process very well **[here](https://www.amazon.jobs/en-gb/software-development-interview-prep?INTCMPID=OAAJAZ100026B#/lessons/fxggI6Y3AxoOjvF9oKV_gky-TSFACjCu)** and you should read through the guide to understand the process.
-* [System Design Resource](https://www.reddit.com/r/leetcode/comments/1buyqo6/system_design_answer_keys_from_exmeta_staff/?utm_source=share&utm_medium=mweb3x&utm_name=mweb3xcss&utm_term=1&utm_content=share_button)
-* [Useful leetcode discussions](https://x.com/ashishps_1/status/1778278607611396168)
-* [Cracking the coding interview](https://www.amazon.in/Cracking-Coding-Interview-Programing-Questions/dp/0984782850)
+* Amazon has documented their interview process very well **{{< newtabref href=https://www.amazon.jobs/en-gb/software-development-interview-prep?INTCMPID=OAAJAZ100026B#/lessons/fxggI6Y3AxoOjvF9oKV_gky-TSFACjCu title="here" >}}** and you should read through the guide to understand the process.
+* {{< newtabref href=https://www.reddit.com/r/leetcode/comments/1buyqo6/system_design_answer_keys_from_exmeta_staff/?utm_source=share&utm_medium=mweb3x&utm_name=mweb3xcss&utm_term=1&utm_content=share_button title="System Design Resource" >}} 
+* {{< newtabref href=https://x.com/ashishps_1/status/1778278607611396168 title="Useful leetcode discussions" >}} 
+* {{< newtabref href=https://www.amazon.in/Cracking-Coding-Interview-Programing-Questions/dp/0984782850 title="Cracking the coding interview" >}} 
 
 
 ## Offer and Beyond
@@ -139,8 +138,7 @@ I did not give any mock interviews but I had appeared for bunch of interviews be
 
 If you are planning to interview for FAANG, I highly recommend giving mock interviews. There are some platforms where you can sign up and schedule mocks (mostly paid) or you can tap into your network (professional or personal) to convince someone to take your mock. 
 
-I am offering to take mock interviews whenever I find some time over the weekend, you can book session for the same **[here](https://topmate.io/amit_bhandari_c/)** (it's completely free!)
+I am offering to take mock interviews whenever I find some time over the weekend, you can book session for the same **{{< newtabref href=https://topmate.io/amit_bhandari_c/ title="here" >}}** (it's completely free!)
 
-
-Feel free to reach me out on email or linkedin if you need further assistance. 
+Feel free to reach me out on email or  **{{< newtabref href=https://www.linkedin.com/in/amit-bhandari-c/ title="LinkedIn" >}}** if you need further assistance.
 
