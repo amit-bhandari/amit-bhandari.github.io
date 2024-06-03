@@ -23,6 +23,11 @@ I got the interview via a referral, which is the fastest way to secure an interv
 
 It's always better to get the first kind of referral, and for that purpose, you need to find someone at Amazon who can truly vouch for you. I would be more than happy to provide a referral for you; reach out to me via email with your resume for the same. I have opened up some slots for mock interviews over the weekend; you can book one **{{< newtabref href=https://topmate.io/amit_bhandari_c/ title="here" >}}** (it’s free of cost and subject to my availability).
 
+## Round 0 - Online coding (Screening)
+The HackerRank online coding test consisted of two questions and served as a screening round that candidates must pass to qualify for the actual interview loops. Performance in this round is not included in the overall interview feedback; its primary purpose is to filter out candidates who do not meet the basic problem-solving criteria.
+
+The test featured basic data structures and algorithms (DSA) questions. I successfully solved one question with all test cases passing and another question with approximately 60% of the test cases passing.
+
 ## Round 1 - DSA 
 There's a prevalent belief circulating online that extensive preparation in Data Structures and Algorithms (DSA) is essential to crack FAANG interviews, and many influencers are capitalizing on this by selling various courses. I often see young engineers on different forums expressing frustration, stating that even after solving thousands of LeetCode questions, they struggle to land offers from FAANG or other companies.
 
