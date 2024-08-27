@@ -190,7 +190,7 @@ drawCircle(
 {{< figure src="/images/jetpack-compose-custom-view/final-result.webp" alt="Final Result" width="400">}}
 
 
-### Addition motion to rotating hand 
+### Addition of motion to rotating hand 
 Adding motion to our stopwatch involves updating `currentTime` variable to elapsed time in milliseconds. To be able to know current timer state, I used live data to send updates to Composable from activity. Observables can be converted to compose states by following this {{< newtabref href=https://developer.android.com/develop/ui/compose/state title="documentation" >}}. I used LiveData instead of Flow due to its simplicity to use, but anything can be used (Flow, RxJava etc)
 
 ```kotlin
