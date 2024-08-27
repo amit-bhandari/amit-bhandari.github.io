@@ -51,33 +51,59 @@ Canvas(
 ```
 
 ### Circled notches
-Now that we have center and radius for our imaginary circle, it's time to draw notches around the edges of circle which will form circular structure for clock. Circle is divided in 12 parts with each part having 21 notches, so total 21 * 12= 252 notches.
+Now that we have center coordinates and radius for our imaginary circle, it's time to draw notches around the edges of circle which will form circular structure for clock. Let's try to draw single notch at the edge of circle. Using geometry, we can figure out x,y coordinates circle perimeter with {{< newtabref href=https://math.stackexchange.com/a/3367801 title="formula" >}}.
+```
+x = circleCenterX + radius * cos(angleInRadians)
+y = circleCenterY + radius * sin(angleInRadians)
+```
 
-There are multiple ways to go about this, the one which I chose involves drawing a notch at the edge of circle and using {{< newtabref href=https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/drawscope/DrawScope#(androidx.compose.ui.graphics.drawscope.DrawScope).rotate(kotlin.Float,androidx.compose.ui.geometry.Offset,kotlin.Function1) title="rotate" >}} function to place it as its correct position. It took me some time {{< newtabref href=https://math.stackexchange.com/a/3367801 title="reading up" >}} on figuring out points at the edge of circle and come up with following piece of code which is repeated 252 times to draw a notch and then rotate it to place it at correct position at the edge of circle. `90f` and `270f` came up during my trial and error in Compose Preview.
+```kotlin
+//circle is drawn just for visualizing placement of notch
+drawCircle(color = Colors.YELLOW.value, radius = circleRadius, center = Offset(centerX, centerY), style = Stroke(width = 2f))
+
+drawRect(
+  color = PRIMARY_NOTCH_COLOR,
+  topLeft = Offset(
+    centerX + circleRadius * cos(270f.degreesToRadians()),
+    centerY + circleRadius * sin(270f.degreesToRadians())
+  ),
+  size = Size(ROTATING_HAND_WIDTH / 2f, PRIMARY_NOTCH_LENGTH),
+)
+```
+{{< figure src="/images/jetpack-compose-custom-view/single-notch.webp" alt="Single Notch" width="400">}}
+
+Now we need to repeat this notch drawing for 252 times (Circle is divided in 12 parts with each part having 21 notches, so total 21 * 12= 252 notches). 
+
+```kotlin
+repeat(252) {
+  val circlePerimeterAngle = 270f + (360f / NOTCH_COUNT) * it
+  drawRect(
+    topLeft = Offset(
+      centerX + circleRadius * cos(circlePerimeterAngle.degreesToRadians()),
+      centerY + circleRadius * sin(circlePerimeterAngle.degreesToRadians())
+    ),
+    /*skipping for brevity*/
+  )
+}
+```
+{{< figure src="/images/jetpack-compose-custom-view/overlapped-notches.webp" alt="Overlapped Notches" width="400">}}
+
+
+As seen above, 252 notches are drawn but they are overlapping each other and are not exactly how we want them to be. We need to rotate each notch corresponding to the angle at which they are placed with respect to center. We use rotate function on each notch to achieve this. 
 
 ```kotlin
 repeat(NOTCH_COUNT) { notchNumber ->
     val circlePerimeterAngle = 270f + (360f / NOTCH_COUNT) * notchNumber
-    rotate(
-        circlePerimeterAngle + 90f,
-        pivot = Offset(
-            centerX + circleRadius * cos(circlePerimeterAngle.degreesToRadians()),
-            centerY + circleRadius * sin(circlePerimeterAngle.degreesToRadians())
-        )
-    ) {
-        drawRect(
-            color = rectColor,
-            topLeft = Offset(
-                centerX + circleRadius * cos(circlePerimeterAngle.degreesToRadians()),
-                centerY + circleRadius * sin(circlePerimeterAngle.degreesToRadians())
-            ),
-            size = Size(ROTATING_HAND_WIDTH / 2f, rectLength),
-        )
+    rotate(circlePerimeterAngle + 90f, /*skipping for brevity*/) {
+        drawRect(/*skipping for brevity*/)
     }
 }
 ```
-{{< figure src="/images/jetpack-compose-custom-view/circle-with-knotches.webp" alt="Circle with Notches" width="400">}}
+{{< figure src="/images/jetpack-compose-custom-view/rotated-notches.webp" alt="Rotated Notches" width="400">}}
 
+Putting everything together and adding small logic to have smaller length for secondary notches, we get our notched circle. 
+
+{{< figure src="/images/jetpack-compose-custom-view/circle-with-knotches.webp" alt="Circle with Notches" width="400">}}
 
 ### Placement of seconds count 
 In repeat loop, for every 5 second mark, need to draw a number beside that notch. Used `drawText` api to style the text and place it just inside the outer radius of circle using some offsets. 
@@ -197,7 +223,7 @@ Added timer functionality in Activity using `SystemClock.elapsedTime` to trigger
 
 Composable took approx {{< newtabref href=https://github.com/amit-bhandari/Stopwatch-Jetpack-Compose/blob/main/app/src/main/java/com/bhandari/composeplayground/StopWatch.kt title="150 lines" >}} to achieve above result. Complete project can be found {{< newtabref href=https://github.com/amit-bhandari/Stopwatch-Jetpack-Compose/tree/main title="here" >}}.
 
-### Takeaways 
+## Takeaways 
 There were a lot of takeaways for me from this small exercise
 - 100% kotlin codebase
   - Biggest takeaway was achieving whole UI with 100% kotlin code without single line of XML. 
@@ -210,7 +236,7 @@ There were a lot of takeaways for me from this small exercise
 - Managing view state is easier
   - Some learning curve is there for understanding recommended way to manage states (specially side effects), but once comfortable, they are very powerful and helps us in writing better integration of data with ui states. 
 
-### Thank you! 
+## Thank you! 
 I have uploaded complete code {{< newtabref href=https://github.com/amit-bhandari/Stopwatch-Jetpack-Compose title="here" >}} in case you want to run it locally or use it in one of your projects. Remember to ⭐ if you like it! 
 
 
