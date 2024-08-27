@@ -4,7 +4,7 @@ date = 2024-08-25T22:54:15+05:30
 draft = false
 tags = ['Android', 'Jetpack Compose', 'Custom View', 'Kotlin']
 description = "After spending 8 years building views using XML layouts, I tried Jetpack Compose first time ever and I think I am never going back to XML again."
-metaImage = "/images/jetpack-compose-custom-view/final-result.webp"
+metaImage = "/images/jetpack-compose-custom-view/compose.webp"
 +++
 {{< newtabref href= title="" >}}
 
