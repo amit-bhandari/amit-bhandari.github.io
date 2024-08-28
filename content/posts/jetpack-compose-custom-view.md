@@ -29,25 +29,19 @@ While I did spend some time in understanding how {{< newtabref href=https://deve
 ## Stopwatch Implementation
 
 ### Drawing imaginary circle
-For drawing imaginary circle, we need to calculate its centerX and centerY coordinates along with radius. Radius is calculated simply as half of the width of Canvas (skipping extra 16 dp padding). {{< newtabref href=https://developer.android.com/reference/kotlin/androidx/compose/ui/layout/OnGloballyPositionedModifier title="OnGloballyPositionedModifier" >}} provides us with view bounds which we can use to get necessary data as shown below.
+For drawing imaginary circle, we need to calculate its centerX and centerY coordinates along with radius. Radius is calculated simply as half of the width of Canvas (skipping extra 16 dp padding). {{< newtabref href=https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/drawscope/CanvasDrawScope title="DrawScope" >}} in canvas provides us with view bounds which we can use to get necessary data as shown below.
 
 ```kotlin
-var circleRadius by remember { mutableFloatStateOf(0f) }
-var centerX by remember { mutableFloatStateOf(0f) }
-var centerY by remember { mutableFloatStateOf(0f) }
-
 Canvas(
-    modifier = modifier
-        .fillMaxSize()
-        .background(Colors.BLACK.value)
-        .padding(16.dp)
-        .onGloballyPositioned {
-            val bounds = it.boundsInWindow()
-            centerX = bounds.size.width / 2f
-            centerY = bounds.size.height / 2f
-            circleRadius = it.size.width.toFloat() / 2
-        }
-)
+  modifier = modifier
+    .fillMaxSize()
+    .background(Colors.BLACK.value)
+    .padding(16.dp)
+) {
+    centerX = size.width / 2f
+    centerY = size.height / 2f
+    circleRadius = size.width / 2
+}
 
 ```
 
