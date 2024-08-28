@@ -38,9 +38,9 @@ Canvas(
     .background(Colors.BLACK.value)
     .padding(16.dp)
 ) {
-    centerX = size.width / 2f
-    centerY = size.height / 2f
-    circleRadius = size.width / 2
+    val centerX = size.width / 2f
+    val centerY = size.height / 2f
+    val circleRadius = size.width / 2
 }
 
 ```
