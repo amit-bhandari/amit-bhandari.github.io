@@ -94,8 +94,6 @@ menu:
       name: Archives
       url: /archives/
       weight: 3
-    - name: Mock Interview
-      url: "https://topmate.io/amit_bhandari_c/"
     - name: Photos
       url: "https://amit-bhandari.github.io/photos/"
     #- name: Resume
