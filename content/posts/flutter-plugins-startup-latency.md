@@ -8,15 +8,15 @@ description = "Benchmarking flutter plugins impact on startup time in Flutter Ap
 
 ## TLDR
 
-Having lots of plugins which are registered during flutter engine initialization/app startup can nagative impact app startup latency. Having 10s of plugins should not cause alarming effect on startup latency, but its always a good idea to keep them in check and benchmark to be 100% sure. Find all the code [here](https://github.com/amit-bhandari/Flutter-Template/tree/plugin-benchmark-1-plugin).
+Registering many plugins during Flutter engine initialization or app startup can negatively impact app startup latency. Having tens of plugins should not cause an alarming effect on startup latency, but it's always a good idea to keep the number in check and benchmark to be certain. Find all the code [here](https://github.com/amit-bhandari/Flutter-Template/tree/plugin-benchmark-1-plugin).
 
 ## Context
 
-Recently one of my collegue asked in Google's internal forum a question regarding plugins impact on startup latency, whether having common plugin for including one of utility functions over individual plugin for each of such function is beneficial in terms of memory usage and startup latency. I could not find much info regarding this in official flutter docs and one of the answer on the forum suggested to benchmark this to be sure. I decided to do some benchmarking to see the impact myself.
+Recently, one of my colleagues asked in a Google internal forum about the impact of plugins on startup latency – specifically, whether using a single, common plugin for multiple utility functions is more beneficial than having individual plugins for each function in terms of memory usage and startup latency. I couldn't find much information regarding this in the official Flutter documentation, and one of the answers on the forum suggested benchmarking this to be certain. I decided to do some benchmarking myself to see the impact.
 
 ## Sample Plugin
 
-Writing 100s of plugins manually was not practical, so decided to create one plugin manually and make use of LLM to write script to duplicate this plugin `n` times in codebase. I used [pigeon](https://pub.dev/packages/pigeon) which helps generating type safe plugin code. Created a plugin with single method which returns custom object.
+Writing hundreds of plugins manually wasn't practical, so I decided to create one plugin manually and use an LLM to write a script to duplicate this plugin n times within the codebase. I used [pigeon](https://pub.dev/packages/pigeon) which helps generate type-safe plugin code. I created a plugin with a single method that returns a custom object.
 
 ```kotlin
 @ConfigurePigeon(
@@ -41,9 +41,9 @@ abstract class HelloPigeon1 {
 }
 ```
 
-Suffix `1` is used at class names and files paths to ensure easy duplication of all these plugin files using script. Code generator takes care of generating necessary files for communication between dart and kotlin layer.
+The suffix `1` is used in class names and file paths to facilitate easy duplication of these plugin files using the script. The code generator takes care of generating the necessary files for communication between the Dart and Kotlin layers.
 
-Plugin is registered at the launch of application in MainActivity.kt
+The plugin is registered at application launch in `MainActivity.kt`
 
 ```kotlin
 class MainActivity : FlutterActivity() {
@@ -56,7 +56,7 @@ class MainActivity : FlutterActivity() {
 
 ## Plugin Duplication
 
-Wrote small (and highly hacky) [bash script](https://github.com/amit-bhandari/Flutter-Template/blob/plugin-benchmark-1-plugin/pigeons/script.sh) to duplicate this plugin `n` number of times by differentiating each one with the help of prefix. Running this script takes lot of time for bigger `n` as it involves code generation, so created few branches in the repo for 1, 50, 500 and 1000 plugins.
+I wrote a small (and admittedly hacky) [bash script](https://github.com/amit-bhandari/Flutter-Template/blob/plugin-benchmark-1-plugin/pigeons/script.sh) to duplicate this plugin n times, differentiating each copy using a numerical prefix. Running this script takes a lot of time for larger values of `n` as it involves code generation. Consequently, I created a few branches in the repository corresponding to 1, 50, 500, and 1000 plugins:
 
 - [`1`](https://github.com/amit-bhandari/Flutter-Template/tree/plugin-benchmark-1-plugin)
 - [`50`](https://github.com/amit-bhandari/Flutter-Template/tree/plugin-benchmark-50-plugin)
@@ -65,28 +65,30 @@ Wrote small (and highly hacky) [bash script](https://github.com/amit-bhandari/Fl
 
 ## Benchmarking
 
-You can run flutter app using command `flutter run --trace-startup --release` to get startup time. I ran this command on real android device (Pixel 4a) to compare latency for 10 times each for every `n` and following are the results.
+You can run the Flutter app using the command `flutter run --trace-startup --release` to measure startup time. I ran this command 10 times for each plugin count (n) on a real Android device (Pixel 4a). The following are the average results, showing the increase compared to the baseline of 1 plugin:
 
 - `1` plugin: `167.7ms`
 - `50` plugins: `185.2ms` `+10.44%`
 - `500` plugins: `361.8ms` `+95.36%`
 - `1000` plugins: `655.3ms` `+81.12%`
 
-As seen from the data above, more number of plugins directly leads to higher startup latency. Practically, if you have 10s of plugins, changes in startup latency should be insignificant enough to be ignored, but as codebase grows and number of plugins grows, one should always think about benchmarking startup latency if its a critical health metric for your application.
+> Note: The percentage increases shown here are relative to the 1-plugin baseline for clarity. Your original percentages showed the increase from the previous step.
+
+As the data shows, a larger number of plugins directly correlates with higher startup latency. Practically, if you have tens of plugins, the change in startup latency is likely insignificant. However, as the codebase and the number of plugins grow, it's important to benchmark startup latency if it's a critical metric for your application.
 
 ## Impact on memory
 
-Every plugin creates a binary message channel to pass messages to and from dart and kotlin along with bunch of auto generated classes which contributes to both heap as well as code memory usage. Although I haven't benchmarked this, I am sure this will have impact on memory usage as well. Feel free to benchmark this if you are looking to see impact of plugins on memory usage.
+Every plugin creates a binary message channel for communication between Dart and Kotlin, along with a bunch of auto-generated classes, which contribute to both heap and code memory usage. Although I haven't benchmarked memory usage, I suspect it is also impacted. Feel free to conduct your own benchmarks if you need to assess the impact of plugins on memory.
 
 ## Mitigation
 
-There are couple of ways one can mitigate this impact.
+There are a couple of ways to mitigate this impact:
 
-1. Lazy registration of plugins
-   - Instead of registering all plugins on app launch, one can explore possibility to register plugins on the fly when needed to avoid impact on startup latency. I haven't yet tried this approach (not sure if flutter even allows this) yet. I am going to try it out and share if something interesting comes up.
-2. Common plugin
-   - Instead of creating plugin for every small use case, one can think of creating a utility plugin by combining all small plugins together. Obvious downside to this would be a bulky plugin with no respect for single responsibiltiy principal of software engineering at all.
+1. Lazy registration of plugins: Instead of registering all plugins at app launch, explore the possibility of registering plugins dynamically, only when they are needed. This could reduce the impact on startup latency.
+   I haven't tried this approach yet (and I'm unsure if Flutter fully supports dynamic registration). I plan to investigate this and will share any interesting findings.
+2. Common plugin: Instead of creating separate plugins for every small use case, consider creating a single 'utility' plugin that combines the functionality of several smaller ones.
+   The obvious downside is creating a potentially bulky plugin that violates the Single Responsibility Principle (SRP) of software engineering.
 
 ## Conclusion
 
-Always benchmark if your app has lots of plugins before taking call whether this optimisation is needed in the first place or not. After all, premature optimization is the root of all evil!
+If your app uses many plugins, always benchmark its startup performance before deciding whether this kind of optimization is necessary. After all, **premature optimization** is the root of all evil!
