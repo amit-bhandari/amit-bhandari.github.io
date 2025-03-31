@@ -3,7 +3,7 @@ title = 'Building Wave Progress Bar with Jetpack Compose'
 date = 2024-11-12T19:37:49+05:30
 draft = false
 tags = ['Android', 'Jetpack Compose', 'Custom View', 'Kotlin']
-description = "Description"
+description = "Building custom wave progress bar using Jetpack compose in Android."
 metaImage = "/images/wave-progress-bar-compose/google.webp"
 +++
 
@@ -13,9 +13,10 @@ I created a customizable wave progress bar using Jetpack Compose, as shown below
 
 {{< figure src="/images/wave-progress-bar-compose/progress.webp" alt="Wave Progress Bar" width="400">}}
 
-## Implementation 
+## Implementation
 
 ### Sine Wave
+
 The closest way to render a wave-like animation is by using a sine wave, which can be drawn with the Android {{< newtabref href=https://developer.android.com/reference/android/graphics/Path title="path" >}} and {{< newtabref href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.math/sin.html title="sin" >}} APIs. The utility function below generates a sine wave path, allowing for customization through various parameters.
 
 ```kotlin
@@ -59,7 +60,8 @@ Box(
 {{< figure src="/images/wave-progress-bar-compose/sine-wave.webp" alt="Sine Wave" width="400">}}
 
 ### Complete Path
-To fill the entire area from the left bottom to the right bottom of the sine wave, start the path at the left bottom, end it at the right bottom, and then close it. This can be achieved using the lineTo and close functions of the Path object. 
+
+To fill the entire area from the left bottom to the right bottom of the sine wave, start the path at the left bottom, end it at the right bottom, and then close it. This can be achieved using the lineTo and close functions of the Path object.
 
 ```kotlin
 {
@@ -72,7 +74,7 @@ To fill the entire area from the left bottom to the right bottom of the sine wav
 
 {{< figure src="/images/wave-progress-bar-compose/complete-path.webp" alt="Complete Path" width="400">}}
 
-We can use Gradient style to fill it out. 
+We can use Gradient style to fill it out.
 
 ```kotlin
 drawPath(path = it, brush = Brush.horizontalGradient(listOf(Color.Magenta, Color.Cyan), style = Fill)
@@ -80,7 +82,8 @@ drawPath(path = it, brush = Brush.horizontalGradient(listOf(Color.Magenta, Color
 
 {{< figure src="/images/wave-progress-bar-compose/gradient-path.webp" alt="Gradient Path" width="400">}}
 
-### Animation 
+### Animation
+
 To make the sine wave feel dynamic, we need to add multiple animations. One animation continuously changes the wave’s amplitude from low to high, while another moves the wave horizontally. This can be achieved using the animateTo API along with LaunchedEffect (to allow dynamic parameter updates from outside the component).
 
 ```kotlin
@@ -116,9 +119,11 @@ LaunchedEffect(phaseShiftDuration) {
 {{< figure src="/images/wave-progress-bar-compose/animating-sine-wave.webp" alt="Wave Progress Bar" width="400">}}
 
 ## Library
+
 The wave progress component is implemented as a separate module, available {{< newtabref href=https://github.com/amit-bhandari/Wave-Progress-Compose/tree/main/wave_progress title="here" >}}. The repository includes an Activity with sliders to adjust various configurable parameters of the component.
 
 {{< figure src="/images/wave-progress-bar-compose/customizations.webp" alt="Customizations" width="400">}}
 
 ## Thank you!
-I have uploaded complete code {{< newtabref href=https://github.com/amit-bhandari/Wave-Progress-Compose title="here" >}} in case you want to run it locally or use it in one of your projects. Remember to ⭐ if you like it! 
+
+I have uploaded complete code {{< newtabref href=https://github.com/amit-bhandari/Wave-Progress-Compose title="here" >}} in case you want to run it locally or use it in one of your projects. Remember to ⭐ if you like it!
