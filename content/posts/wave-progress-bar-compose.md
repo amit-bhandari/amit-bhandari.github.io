@@ -3,7 +3,7 @@ title = 'Building Wave Progress Bar with Jetpack Compose'
 date = 2024-11-12T19:37:49+05:30
 draft = false
 tags = ['Android', 'Jetpack Compose', 'Custom View', 'Kotlin']
-description = "Building custom wave progress bar using Jetpack compose in Android."
+description = 'Building custom wave progress bar using Jetpack compose in Android.'
 metaImage = "/images/wave-progress-bar-compose/google.webp"
 +++
 
