@@ -4,6 +4,7 @@ date = 2025-03-31T19:55:26+05:30
 draft = false
 tags = ['Flutter', 'Plugins', 'Benchmarking', 'Dart']
 description = "Benchmarking flutter plugins impact on startup time in Flutter Application."
+metaImage = "/images/wave-progress-bar-compose/google.webp"
 +++
 
 ## TLDR
